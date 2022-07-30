@@ -5,10 +5,32 @@ services:
     build:
       context: .
       args:
-        - DEV=true
+        - DEV=false
     ports:
       - "8000:8000"
+    depends_on:
+      - mariadb
     volumes:
       - ./app:/app
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "uvicorn main:app --reload --host 0.0.0.0 --port 8000"
+
+  mariadb:
+      image: mariadb
+      container_name: mariadb
+      restart: always
+      volumes:
+        - database:/var/lib/mysql
+      environment:
+        - MARIADB_ROOT_PASSWORD=root
+        - MARIADB_INITDB_SKIP_TZINFO=1
+        - MARIADB_ALLOW_EMPTY_PASSWORD=yes
+        - MARIADB_DATABASE=reikinoapp
+        - MARIADB_USER=reikinoapp
+        - MARIADB_PASSWORD=reikinoapp
+      ports:
+        - 3306:3306
+      command: --lower_case_table_names=1 --max_allowed_packet=32505856 --net_read_timeout=3600 --wait-timeout=28800
+
+volumes:
+  database:
