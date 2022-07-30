@@ -17,7 +17,7 @@ database: List[User] = [
     User(
         id = uuid4(),
         first_name = "Felipe",
-        last_name = "irmão do cassio",
+        last_name = "Irmão do cassio",
         email = "teste@hotmail.com",
         password = "123456",
         is_active = True 
