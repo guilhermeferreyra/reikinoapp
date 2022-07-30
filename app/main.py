@@ -1,11 +1,11 @@
 from uuid import uuid4
 from fastapi import FastAPI
-from models import User
+from models import User, Testimony
 from typing import List
 
 app = FastAPI()
 
-db: List[User] = [
+database: List[User] = [
     User(
         id = uuid4(),
         first_name = "Naan",
@@ -26,9 +26,4 @@ db: List[User] = [
 
 @app.get("/api/v1/users")
 async def fetch_users():
-    return db
-
-@app.post("/api/v1/users")
-async def register_user(user: User):
-    db.append(user)
-    return {"id": user.id}
+    return database
