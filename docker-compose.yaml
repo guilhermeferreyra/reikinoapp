@@ -16,7 +16,7 @@ services:
       - ./app:/app 
       # - ./sql_app:/app
     command: >
-      sh -c "uvicorn --app-dir=/app/src main:app --reload --host 0.0.0.0 --port 8000"
+      sh -c "python -m uvicorn --app-dir=/app/src main:app --reload --host 0.0.0.0 --port 8000"
 
   mariadb:
       image: mariadb
