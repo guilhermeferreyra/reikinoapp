@@ -4,7 +4,7 @@
 
 ```docker-compose up --build```
 
-## App structure
+## Test App structure
 
 - └── sql_app  
   -    ├── __init__.py  
@@ -13,3 +13,6 @@
   -    ├── main.py  
   -    ├── models.py  
   -    └── schemas.py  
+
+## Init alembic
+ ``` docker-compose run --rm app alembic init alembic ```

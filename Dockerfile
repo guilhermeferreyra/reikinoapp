@@ -9,9 +9,6 @@ EXPOSE 8000
 
 ARG DEV=false
 RUN \
-    # apk update &&\ 
-    # apk add --virtual build-deps gcc python3-dev musl-dev &&\
-    # apk add --no-cache mariadb-dev &&\
     python -m venv /py &&\
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /tmp/requirements.txt && \
@@ -29,7 +26,6 @@ FROM base as prod
 WORKDIR /app
 COPY ./app /app
 
-
-FROM base as dev
-WORKDIR /app
-COPY ./sql_app /app
+# FROM base as dev
+# WORKDIR /app
+# COPY ./sql_app /app
