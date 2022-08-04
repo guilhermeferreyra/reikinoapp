@@ -6,6 +6,7 @@ from typing import List
 app = FastAPI()
 
 database: List[User] = [
+    
     User(
         id = uuid4(),
         first_name = "Naan",
@@ -27,3 +28,7 @@ database: List[User] = [
 @app.get("/api/v1/users")
 async def fetch_users():
     return database
+
+@app.post("/api/v1/users")
+async def register_user(user: User):
+    database.append(user)
