@@ -16,3 +16,9 @@
 
 ## Init alembic
  ``` docker-compose run --rm app alembic init alembic ```
+
+## Check for migrations
+  ``` docker-compose run --rm app alembic revision --autogenerate -m "Start app" ```
+
+## Start migrations
+  ``` docker-compose run --rm app alembic upgrade head ```

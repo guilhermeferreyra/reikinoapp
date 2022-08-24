@@ -16,6 +16,6 @@ app = FastAPI()
 # async def fetch_users():
 #     return database
 
-# @app.post("/api/v1/users")
-# async def create_user():
-#     return {"message": "ok"}
+@app.post("/api/v1/users")
+async def create_user(UserCreate: UserCreate):
+    return {"message": f'User {UserCreate.email} created successfully'}
