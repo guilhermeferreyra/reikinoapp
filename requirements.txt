@@ -2,4 +2,9 @@ FastAPI
 uvicorn
 pydantic
 uuid
+<<<<<<< Updated upstream
 sqlalchemy
+=======
+sqlalchemy
+# mysql-connector-python==8.0.29
+>>>>>>> Stashed changes
