@@ -1,6 +1,5 @@
 from database import users
-from fastapi import FastAPI, Path, Body
-from pydantic import BaseModel
+from fastapi import FastAPI, Path
 from uuid import uuid4
 from models import User
 
@@ -11,7 +10,7 @@ def get_database():
     return users
 
 @app.get("/get-user/{user_id}")
-def get_user(user_id : int = Path(None, description = "Procure pela ID, Email ou Nome.")):
+def get_user(user_id : str):
     if user_id not in users:
         return {"Mensagem" : "Usuário não existente."}
 
@@ -27,7 +26,7 @@ def create_user(user : User):
     password = user.password
     is_active = user.is_active
 
-    users[user_id] = {"_id" : user_id, "first_name" : first_name, "last_name" : last_name, "email" : email, "password" : password, "is_active" : bool(is_active)}
+    users[user_id] = {"id" : user_id, "first_name" : first_name, "last_name" : last_name, "email" : email, "password" : password, "is_active" : bool(is_active)}
 
     return {"Mensagem" : "Usuário criado com sucesso!"}
 
@@ -40,7 +39,7 @@ def update_user(user_id : str, user : User):
     password = user.password
     is_active = user.is_active
 
-    users[user_id] = {"_id" : user_id, "first_name" : first_name, "last_name" : last_name, "email" : email, "password" : password, "is_active" : bool(is_active)}
+    users[user_id] = {"id" : user_id, "first_name" : first_name, "last_name" : last_name, "email" : email, "password" : password, "is_active" : bool(is_active)}
 
     return {"Mensagem" : "Usuário formatado com sucesso!"}
 
