@@ -7,22 +7,30 @@ from typing import Optional
 
 # from database import Base
 
+# class User(BaseModel):
+#     id: Optional[UUID] = uuid4
+#     first_name: str
+#     last_name: str
+#     email: str
+#     password: str
+#     is_active: bool = True
+
+
 class User(BaseModel):
-    id: Optional[UUID] = uuid4
     first_name: str
     last_name: str
     email: str
     password: str
-    is_active: bool = True
+    is_active: bool
     
 
-class Testimony(BaseModel):
-    id: Optional[UUID] = uuid4
-    first_name: str
-    last_name: str
-    datetime: str = datetime.now()
-    testimony: str
-    therapist: str
+# class Testimony(BaseModel):
+#     id: Optional[UUID] = uuid4
+#     first_name: str
+#     last_name: str
+#     datetime: str = datetime.now()
+#     testimony: str
+#     therapist: str
 
 # class User(Base):
 #     __tablename__ = "user"

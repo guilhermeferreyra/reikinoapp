@@ -1,4 +1,4 @@
-FROM python:3.10-alpine3.13
+FROM python:3.10.6
 LABEL maintainer="Instituto Xavier"
 
 ENV PYTHONUNBUFFERED 1
