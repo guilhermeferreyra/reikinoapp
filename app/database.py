@@ -6,7 +6,7 @@ users = {
     "@3a77158-af46-49c3-a66b-f7b39d8ad60f": {
         "id": "53a77158-af46-49c3-a66b-f7b39d8ad60f",
         "first_name": "Naan",
-        "last_name": "Bonachão",
+        "last_name": "Andrade",
         "email": "naan@gmail.com",
         "password": "12fsfe320423",
         "is_active": bool("true")
@@ -14,7 +14,7 @@ users = {
     "@2a77158-af46-49c3-a66b-f7b39d8ad60f": {
         "id": "53a77158-af46-49c3-a66b-f7b39d8ad60f",
         "first_name": "Felipe",
-        "last_name": "Bolachão",
+        "last_name": "Souza",
         "email": "felipe@gmail.bom",
         "password": "senha",
         "is_active": bool("true")
