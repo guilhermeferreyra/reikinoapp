@@ -30,7 +30,7 @@ def create_user(user : User):
 
     return {"Mensagem" : "Usuário criado com sucesso!"}
 
-@app.put("/update-user")
+@app.put("/update-user/{user_id}")
 def update_user(user_id : str, user : User):
 
     first_name = user.first_name
